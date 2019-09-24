@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Webistes</title>
+    <title>New Web Site</title>
     <!--Bootstrap Style Sheet web reference added below.-->
     <link
       rel="stylesheet"
@@ -23,39 +23,40 @@
   <body>
     <nav class="navbar bg-primary fixed-top navbar-dark">
       <!--Added in less than sign to go back to the login page.-->
-      <a href="../Assignment 1/login.html" class="text-light">
+      <a href="../website/website-list.html" class="text-light">
         <i class="fas fa-less-than"></i
       ></a>
-      <span class="navbar-brand h1 mb-0">Websites</span>
+      <span class="navbar-brand h1 mb-0">New Web Site</span>
       <!-- Added in a plus sign to show the web page added in.-->
-      <a href="new-website-form.html" class="text-light"
-        ><i class="fas fa-plus"></i
-      ></a>
+      <i class="fas fa-check text-light"></i>
     </nav>
     <div class="container">
-      <form class="form-group">
-        <div class="form-control-lg">
-          <a href="#">Address Book App</a>
-          <a href="" class="float-right"><i class="fas fa-cog"></i></a>
+      <form>
+        <div class="form-group">
+          <label for="name">
+            Name
+          </label>
+          <input type="text" class="form-control" placeholder="Name" />
         </div>
-        <div class="form-control-lg">
-          <a href="">Blogger</a>
-          <a href="" class="float-right"><i class="fas fa-cog"></i></a>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea
+            placeholder="Description"
+            rows="4"
+            maxlength="300"
+            name="description"
+            id="description"
+            class="form-control"
+          ></textarea>
         </div>
-        <div class="form-control-lg">
-          <a href="#">Blogging App</a>
-          <a href="" class="float-right"><i class="fas fa-cog"></i></a>
-        </div>
-        <div class="form-control-lg">
-          <a href="#">Script Testing App</a>
-          <a href="#" class="float-right"><i class="fas fa-cog"></i></a>
-        </div>
-        <nav class="navbar bg-primary fixed-bottom">
-          <span></span>
-          <a href="../website/web-profile.html" class="text-light">
-            <i class="fas fa-user"></i
-          ></a>
-        </nav>
+    </form>
+</div>
+<nav class="navbar bg-primary fixed-bottom">
+  <span></span>
+  <a href="web-profile.html" class="text-light">
+    <i class="fas fa-user"></i
+  ></a>
+</nav>
       </form>
     </div>
   </body>

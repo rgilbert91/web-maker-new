@@ -1,4 +1,7 @@
 body {
-  padding: top 75px;
+  padding-top: 75px;
   padding-bottom: 75px;
+}
+label {
+  font-weight: bold;
 }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit</title>
+     <!--Bootstrap Style Sheet web reference added below.-->
+     <link
+     rel="stylesheet"
+     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+     crossorigin="anonymous"
+   />
+   <!-- Both web-maker-style and bootstrap style sheet added below.-->
+   <link rel="stylesheet" href="../Assignment 1/webmaker-my-style.css" />
+   <!--Font Awesome Java Script Link-->
+   <script
+     src="https://kit.fontawesome.com/1be1eb5625.js"
+     crossorigin="anonymous"
+   ></script>
+</head>
+<body>
+        <nav class="navbar bg-primary fixed-top navbar-dark">
+                <!--Added in less than sign to go back to the login page.-->
+                <a href="../website/website-list.html" class="text-light">
+                  <i class="fas fa-less-than"></i
+                ></a>
+                <span class="navbar-brand h1 mb-0">Edit Web Site</span>
+                <!-- Added in a plus sign to show the web page added in.-->
+               <a href="../website/website-list.html"> <i class="fas fa-check text-light"></i>
+               </a>
+            </nav>
+              <div class="container">
+                <form>
+                  <div class="form-group">
+                    <label for="name">
+                      Website Name
+                    </label>
+                    <input type="text" class="form-control" placeholder="Blogger" />
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Website Description</label>
+                    <textarea
+                      placeholder="Blogger is ablog-publishing service that allows multi-user blogs with time-stamped entries. It was developed by Pyra Labs, which was bought by Google in 2003"
+                      rows="4"
+                      maxlength="300"
+                      name="description"
+                      id="description"
+                      class="form-control"
+                    ></textarea>
+                  </div>
+                  <a href="../website/website-list.html" class="btn btn-danger btn-block">DELETE</a>
+              </form>
+          </div>
+          <nav class="navbar bg-primary fixed-bottom">
+            <span></span>
+            <a href="web-profile.html" class="text-light">
+              <i class="fas fa-user"></i
+            ></a>
+          </nav>
+                </form>
+              </div>
+</body>
+</html>
