@@ -5,3 +5,14 @@ body {
 label {
   font-weight: bold;
 }
+a,
+a:hover {
+  text-decoration: none;
+}
+ul {
+  font-size: 22px;
+  list-style: none;
+}
+.list-pad {
+  line-height: 4;
+}

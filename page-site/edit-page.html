@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>New Page</title>
+    <title>Edit Page</title>
     <!--Bootstrap Style Sheet web reference added below.-->
     <link
       rel="stylesheet"
@@ -21,30 +21,32 @@
     ></script>
   </head>
   <body>
+    <!--Navigation-->
     <nav class="navbar navbar-light fixed-top bg-light">
       <!--Added in less than sign to go back to the login page.-->
       <a href="../website/web-profile.html" class="text-dark">
         <i class="fas fa-less-than"></i
       ></a>
-      <span class="navbar-brand h1 mb-0">New Page</span>
+      <span class="navbar-brand h1 mb-0">Edit Page</span>
       <!-- Added in a plus sign to show the web page added in.-->
       <a href="../page-site/page-list.html" class="text-dark"
         ><i class="fas fa-check text-dark"></i
       ></a>
     </nav>
     <form class="container">
-      <div>
+      <!--Page Name-->
+      <div class="form-group">
         <label for="name">Name</label>
         <input
           class="form-control"
           type="name"
-          name="Name"
-          id="name"
-          placeholder="Name"
+          name="pageName"
+          id="pageName"
+          placeholder="Page Name"
         />
       </div>
-      <!-- first and only tag edited end of class tuesday-->
-      <div>
+      <!-- Title Page-->
+      <div class="form-group">
         <label for="titlePage"> Title Page</label>
         <input
           class="form-control"
@@ -54,12 +56,16 @@
           placeholder="Page Title"
         />
       </div>
-      <nav class="navbar bg-primary fixed-bottom">
+      <nav class="navbar bg-light fixed-bottom">
         <span></span>
-        <a href="../website/web-profile.html" class="text-light">
+        <a href="../website/web-profile.html" class="text-dark">
           <i class="fas fa-user"></i
         ></a>
       </nav>
+
+      <a href="../page-site/page-list.html" class="btn btn-danger btn-block"
+        >DELETE</a
+      >
     </form>
   </body>
 </html>
