@@ -23,42 +23,46 @@
   <body>
     <nav class="navbar navbar-light fixed-top bg-light">
       <!--Added in less than sign to go back to the login page.-->
-      <a href="../website/web-profile.html" class="text-dark">
-        <i class="fas fa-less-than"></i
-      ></a>
-      <span class="navbar-brand h1 mb-0">New Page</span>
+      <div>
+        <a href="../website/web-profile.html" class="text-dark">
+          <i class="fas fa-less-than"></i
+        ></a>
+        <span class="navbar-brand h1 mb-0 ml-4">New Page</span>
+      </div>
       <!-- Added in a plus sign to show the web page added in.-->
       <a href="../page-site/page-list.html" class="text-dark"
         ><i class="fas fa-check text-dark"></i
       ></a>
     </nav>
-    <form class="container">
-      <div>
-        <label for="name">Name</label>
-        <input
-          class="form-control"
-          type="name"
-          name="Name"
-          id="name"
-          placeholder="Name"
-        />
-      </div>
-      <div>
-        <label for="titlePage"> Title Page</label>
-        <input
-          class="form-control"
-          type="text"
-          name="titlePage"
-          id="titlePage"
-          placeholder="Title Page"
-        />
-      </div>
-      <nav class="navbar bg-primary fixed-bottom">
-        <span></span>
-        <a href="../website/web-profile.html" class="text-light">
-          <i class="fas fa-user"></i
-        ></a>
-      </nav>
-    </form>
+    <main class="container">
+      <form action="">
+        <section>
+          <label for="name">Name</label>
+          <input
+            class="form-control"
+            type="name"
+            name="Name"
+            id="name"
+            placeholder="Name"
+          />
+        </section>
+        <section>
+          <label for="titlePage"> Title Page</label>
+          <input
+            class="form-control"
+            type="text"
+            name="titlePage"
+            id="titlePage"
+            placeholder="Title Page"
+          />
+        </section>
+      </form>
+    </main>
+    <footer class="navbar bg-primary fixed-bottom">
+      <span></span>
+      <a href="../website/web-profile.html" class="text-light">
+        <i class="fas fa-user"></i
+      ></a>
+    </footer>
   </body>
 </html>

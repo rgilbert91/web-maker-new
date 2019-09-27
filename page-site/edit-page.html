@@ -24,48 +24,53 @@
     <!--Navigation-->
     <nav class="navbar navbar-light fixed-top bg-light">
       <!--Added in less than sign to go back to the login page.-->
-      <a href="../website/web-profile.html" class="text-dark">
-        <i class="fas fa-less-than"></i
-      ></a>
-      <span class="navbar-brand h1 mb-0">Edit Page</span>
+      <div>
+        <a href="../website/web-profile.html" class="text-dark">
+          <i class="fas fa-less-than"></i
+        ></a>
+        <span class="navbar-brand h1 mb-0 ml-4">Edit Page</span>
+      </div>
       <!-- Added in a plus sign to show the web page added in.-->
       <a href="../page-site/page-list.html" class="text-dark"
         ><i class="fas fa-check text-dark"></i
       ></a>
     </nav>
-    <form class="container">
+    <main class="container">
       <!--Page Name-->
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input
-          class="form-control"
-          type="name"
-          name="pageName"
-          id="pageName"
-          placeholder="Page Name"
-        />
-      </div>
-      <!-- Title Page-->
-      <div class="form-group">
-        <label for="titlePage"> Title Page</label>
-        <input
-          class="form-control"
-          type="text"
-          name="rageTitle"
-          id="pageTitle"
-          placeholder="Page Title"
-        />
-      </div>
-      <nav class="navbar bg-light fixed-bottom">
+      <form>
+        <section class="form-group">
+          <label for="name">Name</label>
+          <input
+            class="form-control"
+            type="name"
+            name="pageName"
+            id="pageName"
+            placeholder="Page Name"
+            value="Blog Post"
+          />
+        </section>
+        <!-- Title Page-->
+        <section class="form-group">
+          <label for="titlePage"> Title Page</label>
+          <input
+            class="form-control"
+            type="text"
+            name="pageTitle"
+            id="pageTitle"
+            placeholder="Page Title"
+          />
+        </section>
+
+        <a href="../page-site/page-list.html" class="btn btn-danger btn-block"
+          >DELETE</a
+        >
+      </form>
+      <footer class="navbar bg-light fixed-bottom">
         <span></span>
         <a href="../website/web-profile.html" class="text-dark">
           <i class="fas fa-user"></i
         ></a>
-      </nav>
-
-      <a href="../page-site/page-list.html" class="btn btn-danger btn-block"
-        >DELETE</a
-      >
-    </form>
+      </footer>
+    </main>
   </body>
 </html>
