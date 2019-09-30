@@ -16,3 +16,9 @@ ul {
 .list-pad {
   line-height: 4;
 }
+.item-right {
+  right: 0;
+}
+.front {
+  z-index: 10;
+}

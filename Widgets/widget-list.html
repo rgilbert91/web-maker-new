@@ -23,91 +23,121 @@
   <body>
     <!--NAVIGATION FOR WIDGETS-->
     <nav class="navbar navbar-light fixed-top bg-light">
-      <!--Added in less than sign to go back to the login page.-->
+    <!--Added in less than sign to go back to the login page.-->
       <div>
         <a href="../page-site/page-list.html" class="text-dark">
           <i class="fas fa-less-than"></i
         ></a>
         <span class="navbar-brand h1 mb-0 ml-4">Widgets</span>
       </div>
-      <!-- Added in a plus sign to show the web page added in.-->
+    <!-- Added in a plus sign to show the web page added in.-->
       <a href="../Widgets/widget-chooser.html" class="text-dark"
         ><i class="fas fa-plus"></i
       ></a>
     </nav>
     <!--WIDGETS PAGE-->
-    <!--Heading with icons-->
-    <main class="container">
+    <!--TITLE VIDEO PARAGRAPHS (all leadin with icons for absolute position/item-right) -->
+    <!--icon w/ Heading with icons-->
+    <main class="container-fluid">
       <header>
-        <h1 id="loop" class="display-4">The Loop</h1>
-        <div class="float-right">
-          <a href="#"><i class="fas fa-cog"></i></a>
-          <a href="#"><i class="fas fa-bars text-dark"></i></a>
-        </div>
+        <!--icon-->
+          <div class="position-absolute item-right p-1 bg-light rounded-left" >
+              <a href="../Widgets/widget-heading.html"><i class="fas fa-cog"></i></a>
+              <a href="#"><i class="fas fa-bars text-dark"></i></a>
+          </div>
+          <h1 class="font-weight-bolder">GIZMODO</h1>
       </header>
-      <!--SubHeader with IMAGE and icons-->
-      <subheader>
-        <h3>US Senate Reaches Compromise on Emergency Zika Funding</h3>
-        <!--Image added-->
-        <div class="float-right">
-          <a href="#"><i class="fas fa-cog"></i></a>
+    <!--SubHeader with Image, icons, and paragraph-->
+      
+      <section>
+    <!--icon w/ Sub Header added HERE-->  
+        <subheader>
+          <!--icon-->
+          <div class="position-absolute item-right p-1 bg-light rounded-left" >
+            <a href="#"><i class="fas fa-cog"></i></a>
+            <a href="#"><i class="fas fa-bars text-dark"></i></a>
+          </div>
+        
+     <h3>US Senate Reaches Compromise on Emergency Zika Funding</h3>
+    <!--icon w/Image added-->
+    <!--icon-->
+        <div class="position-absolute item-right p-1 bg-light rounded-left" >
+          <a href="../Widgets/widget-image.html"><i class="fas fa-cog"></i></a>
           <a href="#"><i class="fas fa-bars text-dark"></i></a>
         </div>
         <div>
+    <!--image-->
           <img
             src="../Widgets/mosquitobite.jpg"
             alt="Mosquito"
-            style="width: auto"
+            width="100%"
           />
         </div>
-      </subheader>
+        </subheader>
+   <!--icon w/ paragraph-->
+   <!--icon-->
+        <div class="position-absolute item-right p-1 bg-light rounded-left" >
+          <a href="#"><i class="fas fa-cog"></i></a>
+          <a href="#"><i class="fas fa-bars text-dark"></i></a>
+      </div>
+    <!--paragraph-->
       <p>
         In February, the
         <a href="web-reference-here"
           >White House formally asked Congress for 1.8 billion dollars</a
         >
         to help combat the Zika virus this summer. Now, the Senate has worked
-        out a bipartisan deal will allocate $1.1 billion in emrgency funding.
+        out a bipartisan deal will allocate $1.1 billion in emergency funding.
       </p>
+      </section>
+  <!--TITLE VIDEO PARAGRAPHS (all leading with icons for absolute position/item-right) -->
+      <section>
+  <!--icon w/ Second Heading-->
       <div>
-        <div class="float-right">
+        <!--icon-->
+        <div class="position-absolute item-right p-1 bg-light rounded-left" >
           <a href="#"><i class="fas fa-cog"></i></a>
           <a href="#"><i class="fas fa-bars text-dark"></i></a>
         </div>
       </div>
-      <!--Second Heading and video after heading.-->
-      <h3>Man in Wingshuit Flies Straight Through a Ring of Fire</h3>
-      <div class="float-right">
-        <a href="#"><i class="fas fa-cog"></i></a>
+      
+      <h3>Man in Wing-Suit Flies Straight Through a Ring of Fire</h3>
+ <!-- icon with/ Video Added-->
+ <!--icon-->
+      <div class="position-absolute item-right p-1 bg-light rounded-left front" >
+        <a href="../Widgets/widget-youtube.html"><i class="fas fa-cog"></i></a>
         <a href="#"><i class="fas fa-bars text-dark"></i></a>
       </div>
-      <!-- Video Added-->
-      <iframe width="800" height="450"
+      <div class="embed-responsive embed-responsive-16by9">
+      <iframe
       src="https://www.youtube.com/embed/uLWLashCXHE"
       frameborder="0"
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
       </iframe></iframe>
-      <!--Paragraph added-->
+    </div>
+ <!--icon w/ Paragraph added-->
       <div>
-        <p>Flying in a wingsuit? That's just not enough anymore. Anyone could do that (I would never do that.)
-         You have to tmake it more extreme, like by hitting a target while you're cutting through the air at crazy speeds.
+        <!--icon-->
+          <div class="position-absolute item-right p-1 bg-light rounded-left" >
+              <a href="#"><i class="fas fa-cog"></i></a>
+              <a href="#"><i class="fas fa-bars text-dark"></i></a>
+            </div>
+        <p>Flying in a wing-suit? That's just not enough anymore. Anyone could do that (I would never do that.)
+         You have to make it more extreme, like by hitting a target while you're cutting through the air at crazy speeds.
          Or by making that target a small ring that you have to somehow fly through. Or by lighting that ring on fire.
          Or by.... Actually, that should be extreme enough for now.</p>
-         <div class="float-right">
-            <a href="#"><i class="fas fa-cog"></i></a>
-            <a href="#"><i class="fas fa-bars text-dark"></i></a>
-          </div>
-        </div>
+      </div>
+      </section>
     </main>
-    <!--Navigation Footer (showing plays and views TO BE ADDED AS WELL)-->
+  <!--Navigation Footer (showing plays and views TO BE ADDED AS WELL)-->
     <footer class="navbar bg-light navbar-light fixed-bottom">
      <div> <a href="plays" class="text-dark"><i class="fas fa-play"></i></a>
         <a href="view attachment" class="text-dark navbar-brand mb-0  ml-4" >
           <i class="fas fa-eye" ></i></a>
-        </div>
-        <a href="../Assignment 1/web-profile.html" class="text-dark">
-        <i class="fas fa-user"></i
+    </div>
+          <a href="../Assignment 1/web-profile.html" class="text-dark">
+          <i class="fas fa-user"></i
       ></a>
     </footer>
   </body>
