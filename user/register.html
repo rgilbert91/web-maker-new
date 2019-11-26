@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Register</title>
+    <!--Bootstrap Style Sheet web reference added below.-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Both web-maker-style and bootstrap style sheet added below.-->
+    <link rel="stylesheet" href="webmaker-my-style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Register</h1>
+      <form>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Username" />
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Password" />
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Verify Password"
+          />
+        </div>
+        <!-- Added anchor tag & hyper link reference to replace 
+            the button funtion. Looks like a button, 
+            technically still is, to link to next page.-->
+        <a href="../user/web-profile.html" class="btn btn-primary btn-block">
+          Register</a
+        >
+        <a href="login.html" class="btn btn-danger btn-block"> Cancel</a>
+      </form>
+    </div>
+  </body>
+</html>

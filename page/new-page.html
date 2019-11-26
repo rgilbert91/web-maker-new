@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>New Page</title>
+    <!--Bootstrap Style Sheet web reference added below.-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Both web-maker-style and bootstrap style sheet added below.-->
+    <link rel="stylesheet" href="../user/webmaker-my-style.css" />
+    <!--Font Awesome Java Script Link-->
+    <script
+      src="https://kit.fontawesome.com/1be1eb5625.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-light fixed-top bg-light">
+      <!--Added in less than sign to go back to the login page.-->
+      <div>
+        <a href="../user/web-profile.html" class="text-dark">
+          <i class="fas fa-less-than"></i
+        ></a>
+        <span class="navbar-brand h1 mb-0 ml-4">New Page</span>
+      </div>
+      <!-- Added in a plus sign to show the web page added in.-->
+      <a href="../page/page-list.html" class="text-dark"
+        ><i class="fas fa-check text-dark"></i
+      ></a>
+    </nav>
+    <main class="container">
+      <form action="">
+        <section>
+          <label for="name">Name</label>
+          <input
+            class="form-control"
+            type="name"
+            name="Name"
+            id="name"
+            placeholder="Name"
+          />
+        </section>
+        <section>
+          <label for="titlePage"> Title Page</label>
+          <input
+            class="form-control"
+            type="text"
+            name="titlePage"
+            id="titlePage"
+            placeholder="Title Page"
+          />
+        </section>
+      </form>
+    </main>
+    <footer class="navbar bg-primary fixed-bottom">
+      <span></span>
+      <a href="../user/web-profile.html" class="text-light">
+        <i class="fas fa-user"></i
+      ></a>
+    </footer>
+  </body>
+</html>

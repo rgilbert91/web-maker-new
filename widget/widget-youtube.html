@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Widget Youtube Edit</title>
+  </head>
+  <!--Bootstrap Style Sheet web reference added below.-->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+  <!-- My web-maker-style sheet added below.-->
+  <link rel="stylesheet" href="../user/webmaker-my-style.css" />
+  <!--Font Awesome Java Script Link-->
+  <script
+    src="https://kit.fontawesome.com/1be1eb5625.js"
+    crossorigin="anonymous"
+  ></script>
+  <body>
+    <!-- Widget YouTube Start-->
+    <nav class="navbar navbar-light bg-light fixed-top">
+      <div>
+        <a href="../widget/widget-chooser.html"
+          ><i class="fas fa-less-than"></i
+        ></a>
+        <span class="navbar-brand h1 mb-0 ml-4">Widget YouTube</span>
+      </div>
+      <a href="../widget/widget-chooser.html" class="text-dark">
+        <i class="fas fa-check"></i
+      ></a>
+    </nav>
+    <!--Widget YouTube Edit start-->
+    <main class="container">
+      <form>
+        <div class="form-group">
+          <label for="name">
+            Name
+          </label>
+          <input type="text" class="form-control" id="name" />
+        </div>
+        <div class="form-group">
+          <label for="name">
+            Text
+          </label>
+          <input type="text" class="form-control" id="text" />
+        </div>
+        <div class="form-group">
+          <label for="description">URL</label>
+          <input type="url" class="form-control" id="url" />
+        </div>
+        <div class="form-group">
+          <label for="name">
+            Width
+          </label>
+          <input
+            type="number"
+            class="form-control"
+            id="width"
+            min="1"
+            max="100"
+          />
+        </div>
+        <a href="../widget/widget-chooser.html" class="btn btn-danger btn-block"
+          >DELETE</a
+        >
+      </form>
+    </main>
+    <!--Navigation Footer-->
+    <footer class="navbar bg-light navbar-light fixed-bottom">
+      <span></span>
+      <a href="../user/web-profile.html" class="text-dark">
+        <i class="fas fa-user"></i
+      ></a>
+    </footer>
+  </body>
+</html>
