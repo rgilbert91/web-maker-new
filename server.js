@@ -10,9 +10,9 @@ app.use(express.json());
 
 // define routes
 app.use("/api/user", require("./routes/user"));
-// app.use("/api/websites", require("./routes/websites"));
-// app.use("/api/page", require("./routes/page"));
-// app.use("/api/widget", require("./routes/widget"));
+app.use("/api/website", require("./routes/websites"));
+app.use("/api/page", require("./routes/page"));
+app.use("/api/widget", require("./routes/widget"));
 
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {

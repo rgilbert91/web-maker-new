@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
+import axios from "axios";
 
 export default function PageEdit(props) {
   const params = useParams();
@@ -9,16 +10,22 @@ export default function PageEdit(props) {
 
   useEffect(() => {
     // Initialize Page form
-    const page = props.getPage(params.pid);
-    setName(page.name);
-    setTitle(page.title);
-  }, [params.wid, props, params.pid]);
+    getPage();
+    // eslint-disable-next-line
+  }, []);
 
-  const remove = () => {
-    props.removePage(params.pid);
+  // function for page form
+  const getPage = async () => {
+    const res = await axios.get(`/api/page/${params.pid}`);
+    setName(res.data.name);
+    setTitle(res.data.title);
+  };
+
+  const remove = async () => {
+    await axios.delete(`/api/page/${params.pid}`);
     history.push(`/user/${params.uid}/website/${params.wid}/page`);
   };
-  const update = e => {
+  const update = async e => {
     e.preventDefault();
     const newPage = {
       _id: params.pid,
@@ -26,7 +33,7 @@ export default function PageEdit(props) {
       title: title,
       websiteId: params.wid
     };
-    props.updatePage(newPage);
+    await axios.put("/api/page", newPage);
     history.push(`/user/${params.uid}/website/${params.pid}/page`);
   };
 

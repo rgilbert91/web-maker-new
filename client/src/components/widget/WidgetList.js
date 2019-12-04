@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import Axios from "axios";
 
 export default function WidgetList(props) {
   const params = useParams();
@@ -7,9 +8,15 @@ export default function WidgetList(props) {
   const [widgets, setWidgets] = useState([]);
 
   useEffect(() => {
-    setWidgets(props.getWidgets(params.pid));
-  }, [props, params.pid]);
+    // Initialize widget form
+    getWidgets();
+    // eslint-disable-next-line
+  }, []);
 
+  const getWidgets = async () => {
+    const res = await Axios.get(`/api/widget/page/${params.pid}`);
+    setWidgets(res.data);
+  };
   return (
     <div>
       <nav className="navbar navbar-light bg-light fixed-top">

@@ -10,9 +10,10 @@ export default function Login(props) {
 
   async function onSubmit(e) {
     e.preventDefault();
-    const user = await axios.get(
+    const res = await axios.get(
       `/api/user?username=${username}&password=${password}`
     );
+    const user = res.data;
     if (user) {
       history.push(`/user/${user._id}`);
     } else {

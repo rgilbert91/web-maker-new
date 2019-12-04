@@ -37,7 +37,7 @@ const users = [
 ];
 
 //  Find user by credentials
-router.get("/", (re, res) => {
+router.get("/", (req, res) => {
   // Get username and password
   const username = req.query.username;
   const password = req.query.password;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
+import axios from "axios";
 
 export default function WebsiteEdit(props) {
   const params = useParams();
@@ -10,19 +11,31 @@ export default function WebsiteEdit(props) {
 
   useEffect(() => {
     // Initialize left website list
-    setWebsites(props.getWebsites(params.uid));
+    getWebsites();
     // Initialize right website form
-    const website = props.getWebsite(params.wid);
-    setName(website.name);
-    setDescription(website.description);
-  }, [params.uid, props, params.wid]);
+    getWebsite();
+    // eslint-disable-next-line
+  }, [params.wid]);
 
-  const remove = () => {
-    props.removeWebsite(params.wid);
+  // Function to get left side from server
+  const getWebsites = async () => {
+    const res = await axios.get(`/api/website/user/${params.uid}`);
+    setWebsites(res.data);
+  };
+
+  // Function to get right side from server
+  const getWebsite = async () => {
+    const res = await axios.get(`/api/website/${params.wid}`);
+    setName(res.data.name);
+    setDescription(res.data.description);
+  };
+
+  const remove = async () => {
+    await axios.delete(`/api/website/${params.wid}`);
     history.push(`/user/${params.uid}/website`);
   };
 
-  const update = e => {
+  const update = async e => {
     e.preventDefault();
     const newWeb = {
       _id: params.wid,
@@ -30,7 +43,7 @@ export default function WebsiteEdit(props) {
       description: description,
       developerId: params.uid
     };
-    props.updateWebsite(newWeb);
+    await axios.put("/api/website", newWeb);
     history.push(`/user/${params.uid}/website`);
   };
 

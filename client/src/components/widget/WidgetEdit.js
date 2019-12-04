@@ -3,6 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import WidgetHeading from "./WidgetHeading";
 import WidgetYoutube from "./WidgetYoutube";
 import WidgetImage from "./WidgetImage";
+import axios from "axios";
 
 export default function WidgetEdit(props) {
   const history = useHistory();
@@ -10,21 +11,29 @@ export default function WidgetEdit(props) {
   const [widget, setWidget] = useState({});
 
   useEffect(() => {
-    setWidget(props.getWidget(params.wgid));
-  }, [props, params.wgid]);
+    // Initialize page form
+    getWidget();
+    // eslint-disable-next-line
+  }, []);
 
-  const onChange = e => {
+  //  Function for widget form
+  const getWidget = async () => {
+    const res = await axios.get(`api/widget/${params.wgid}`);
+    setWidget(res.data.widget);
+  };
+
+  const onChange = async e => {
     setWidget({ ...widget, [e.target.name]: e.target.value });
   };
 
-  const remove = () => {
-    props.removeWidget(widget.wgid);
+  const remove = async () => {
+    await axios.delete(`/widget/:wgid`);
     history.pushState(
       `/user/${params.uid}/website/${params.wid}/page/${params.pid}/widget`
     );
   };
 
-  const update = () => {
+  const update = async () => {
     const newWidget = widget;
     if (newWidget.widgetType === "HEADING" && !widget.size) {
       widget.size = "1";
