@@ -29,11 +29,11 @@ router.get("/websites/:wid", (req, res) => {
 
 // find page by page ID
 router.get("/:pid", (req, res) => {
-  const pid = req.param.wid;
+  const pid = req.params.pid;
   let page = null;
   for (let i = 0; i < pages.length; i++) {
     if (pages[i]._id === pid) {
-      page === pages[i];
+      page = pages[i];
     }
   }
   res.json(page);
@@ -54,8 +54,11 @@ router.put("/", (res, req) => {
 router.delete("/:pid", (req, res) => {
   const pid = req.params.pid;
   for (let i = 0; i < pages.length; i++) {
-    pages.splice(i, 1);
+    if (pages[i]._id === pid) {
+      pages.splice(i, 1);
+    }
   }
+  res.json(pages);
 });
 
 module.exports = router;

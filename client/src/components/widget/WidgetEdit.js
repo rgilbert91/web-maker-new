@@ -18,17 +18,17 @@ export default function WidgetEdit(props) {
 
   //  Function for widget form
   const getWidget = async () => {
-    const res = await axios.get(`api/widget/${params.wgid}`);
-    setWidget(res.data.widget);
+    const res = await axios.get(`/api/widget/${params.wgid}`);
+    setWidget(res.data);
   };
 
-  const onChange = async e => {
+  const onChange = e => {
     setWidget({ ...widget, [e.target.name]: e.target.value });
   };
 
   const remove = async () => {
-    await axios.delete(`/widget/:wgid`);
-    history.pushState(
+    await axios.delete(`/api/widget/${params.wgid}`);
+    history.push(
       `/user/${params.uid}/website/${params.wid}/page/${params.pid}/widget`
     );
   };
@@ -53,7 +53,7 @@ export default function WidgetEdit(props) {
       newWidget.url =
         "https://www.youtube.com/embed" + urlArray[urlArray.length - 1];
     }
-    props.updateWidget(widget);
+    await axios.put("/api/widget", newWidget);
     history.push(
       `/user/${params.uid}/website/${params.wid}/page/${params.pid}/widget`
     );

@@ -64,7 +64,7 @@ router.get("/:wgid", (req, res) => {
   let widget = null;
   for (let i = 0; i < widgets.length; i++) {
     if (widgets[i]._id === wgid) {
-      widget === widgets[i];
+      widget = widgets[i];
     }
   }
   res.json(widget);
@@ -84,9 +84,12 @@ router.put("/", (req, res) => {
 // Delete Widgets
 router.delete("/:wgid", (req, res) => {
   const wgid = req.params.wgid;
-  for (let i = 0; i, widgets.length; i++) {
-    widgets.splice(i, 1);
+  for (let i = 0; i < widgets.length; i++) {
+    if (widgets[i]._id === wgid) {
+      widgets.splice(i, 1);
+    }
   }
+  res.json(widgets);
 });
 
 module.exports = router;

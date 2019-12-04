@@ -33,7 +33,7 @@ export default function WidgetHeading(props) {
               type="text"
               className="form-control"
               placeholder="Enter Widget Name..."
-              value={props.widget.size ? props.widget.name : ""}
+              value={props.widget.name ? props.widget.name : ""}
               onChange={props.onChange}
             />
           </div>
@@ -44,7 +44,7 @@ export default function WidgetHeading(props) {
               type="text"
               className="form-control"
               placeholder="Enter Widget Text"
-              value={props.widget.size ? props.widget.text : ""}
+              value={props.widget.text ? props.widget.text : ""}
               onChange={props.onChange}
             />
           </div>
