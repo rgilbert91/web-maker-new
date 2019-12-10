@@ -33,16 +33,21 @@ export default function WidgetEdit(props) {
     );
   };
 
-  const update = async () => {
+  const update = async e => {
+    e.preventDefault();
     const newWidget = widget;
     if (newWidget.widgetType === "HEADING" && !widget.size) {
       widget.size = "1";
     }
-    if (newWidget.widthType === "IMAGE" || newWidget.widgetType === "YOUTUBE") {
+
+    if (
+      newWidget.widgetType === "IMAGE" ||
+      newWidget.widgetType === "YOUTUBE"
+    ) {
       if (!newWidget.width) {
-        newWidget.width += "100%";
+        newWidget.width = "100%";
       } else {
-        newWidget.Width += "%";
+        newWidget.width += "%";
       }
     }
 
@@ -51,8 +56,9 @@ export default function WidgetEdit(props) {
       const urlArray = newWidget.url.split("/");
       //  parse url into embed version
       newWidget.url =
-        "https://www.youtube.com/embed" + urlArray[urlArray.length - 1];
+        "https://www.youtube.com/embed/" + urlArray[urlArray.length - 1];
     }
+    console.log(newWidget);
     await axios.put("/api/widget", newWidget);
     history.push(
       `/user/${params.uid}/website/${params.wid}/page/${params.pid}/widget`

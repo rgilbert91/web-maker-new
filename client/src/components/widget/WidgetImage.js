@@ -25,7 +25,7 @@ export default function WidgetImage(props) {
         </button>
       </nav>
       <main className="container">
-        <form>
+        <form id="widgetForm" onSubmit={props.update}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
             <input
@@ -47,7 +47,6 @@ export default function WidgetImage(props) {
               value={props.widget.text ? props.widget.text : ""}
               onChange={props.onChange}
             />
-            />
           </div>
           <div className="form-group">
             <label htmlFor="url">URL</label>
@@ -58,7 +57,6 @@ export default function WidgetImage(props) {
               placeholder="Enter image address..."
               value={props.widget.url ? props.widget.url : ""}
               onChange={props.onChange}
-            />
             />
           </div>
           <div className="form-group">
@@ -71,7 +69,6 @@ export default function WidgetImage(props) {
               name="width"
               value={props.widget.width ? props.widget.width : "100"}
               onChange={props.onChange}
-            />
             />
           </div>
           <div className="form-group">

@@ -16,6 +16,7 @@ export default function WidgetYouTube(props) {
           <span className="navbar-brand h1 mb-0 ml-4">Edit Widget</span>
         </div>
         <button
+          form="widgetForm"
           to={`/user/${params.uid}/website/${params.wid}/page/${params.pid}/widget`}
           className="text-dark btn"
         >
@@ -31,8 +32,8 @@ export default function WidgetYouTube(props) {
               className="form-control"
               name="name"
               placeholder="Enter widget name..."
-              value={props.widget.name}
-              onChange={props.widget.name ? props.widget.name : ""}
+              value={props.widget.name ? props.widget.name : ""}
+              onChange={props.onChange}
             />
           </div>
           <div className="form-group">
@@ -42,8 +43,8 @@ export default function WidgetYouTube(props) {
               className="form-control"
               name="text"
               placeholder="Enter Widget text..."
-              value={props.widget.text}
-              onChange={props.widget.text ? props.widget.text : ""}
+              value={props.widget.text ? props.widget.text : ""}
+              onChange={props.onChange}
             />
           </div>
           <div className="form-group">
@@ -52,9 +53,9 @@ export default function WidgetYouTube(props) {
               type="text"
               className="form-control"
               name="url"
-              placeholder="Enter image address..."
-              value={props.widget.url}
-              onChange={props.widget.url ? props.widget.url : ""}
+              placeholder="Enter URL address..."
+              value={props.widget.url ? props.widget.url : ""}
+              onChange={props.onChange}
             />
           </div>
           <div className="form-group">
@@ -65,15 +66,10 @@ export default function WidgetYouTube(props) {
               min={1}
               max={100}
               name="width"
-              value={props.widget.width}
-              onChange={props.widget.width ? props.widget.width : "100%"}
+              value={props.widget.width ? props.widget.width : "100"}
+              onChange={props.onChange}
             />
           </div>
-          <div className="form-group">
-            <label htmlFor="upload">Upload</label>
-            <input type="file" className="form-control" id="upload" />
-          </div>
-          <button className="btn btn-primary btn-block">Upload YouTube</button>
           <button
             type="button"
             onClick={props.remove}

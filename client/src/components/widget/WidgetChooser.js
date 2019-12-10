@@ -14,6 +14,7 @@ export default function WidgetChooser(props) {
       widgetType: type,
       pageId: params.pid
     };
+    // Add new Widget into widgets array
     await axios.post("/api/widget", newWidget);
     history.push(
       `/user/${params.uid}/website/${params.wid}/page/${params.pid}/widget/${newWidget._id}`
