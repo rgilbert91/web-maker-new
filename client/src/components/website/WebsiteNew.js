@@ -72,7 +72,7 @@ export default function WebsiteNew(props) {
           <div className="container">
             <ul className="list-group list-group-flush">
               {websites.map(website => (
-                <li key={website.id} className="list-group-item">
+                <li key={website._id} className="list-group-item">
                   <Link
                     to={`/user/${website.developerId}/website/${website.id}/page`}
                   >

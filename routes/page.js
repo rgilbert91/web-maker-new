@@ -2,10 +2,30 @@ const express = require("express");
 const router = express.Router();
 
 const pages = [
-  { _id: "321", name: "Post 1", websiteId: "456", title: "Lorem" },
-  { _id: "432", name: "Post 2", websiteId: "456", title: "Lorem" },
-  { _id: "543", name: "Post 3", websiteId: "456", title: "Lorem" },
-  { _id: "544", name: "Post 3", websiteId: "123", title: "Lorem" }
+  {
+    _id: "321",
+    name: "Post 1",
+    websiteId: "456",
+    title: "Lorem"
+  },
+  {
+    _id: "432",
+    name: "Post 2",
+    websiteId: "456",
+    title: "Lorem"
+  },
+  {
+    _id: "543",
+    name: "Post 3",
+    websiteId: "456",
+    title: "Lorem"
+  },
+  {
+    _id: "544",
+    name: "Post 3",
+    websiteId: "123",
+    title: "Lorem"
+  }
 ];
 
 // Create websites /api/pages

@@ -28,3 +28,9 @@ const PORT = process.env.PORT || 3100;
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
 });
+
+// Import db.is into server.js to connect to database
+const connectDB = require("./config/db");
+
+// Connect DB
+connectDB();

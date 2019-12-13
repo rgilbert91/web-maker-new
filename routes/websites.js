@@ -2,13 +2,48 @@ const express = require("express");
 const router = express.Router();
 
 const websites = [
-  { _id: "123", name: "Facebook", developerId: "456", description: "Lorem" },
-  { _id: "234", name: "Tweeter", developerId: "456", description: "Lorem" },
-  { _id: "456", name: "Msimbo", developerId: "456", description: "Lorem" },
-  { _id: "890", name: "Go", developerId: "123", description: "Lorem" },
-  { _id: "567", name: "Tic Tac Toe", developerId: "123", description: "Lorem" },
-  { _id: "678", name: "Checkers", developerId: "123", description: "Lorem" },
-  { _id: "789", name: "Chess", developerId: "234", description: "Lorem" }
+  {
+    _id: "123",
+    name: "Facebook",
+    developerId: "456",
+    description: "Lorem"
+  },
+  {
+    _id: "234",
+    name: "Twitter",
+    developerId: "456",
+    description: "Lorem"
+  },
+  {
+    _id: "456",
+    name: "Msimbo",
+    developerId: "456",
+    description: "Lorem"
+  },
+  {
+    _id: "890",
+    name: "Go",
+    developerId: "123",
+    description: "Lorem"
+  },
+  {
+    _id: "567",
+    name: "Tic Tac Toe",
+    developerId: "123",
+    description: "Lorem"
+  },
+  {
+    _id: "678",
+    name: "Checkers",
+    developerId: "123",
+    description: "Lorem"
+  },
+  {
+    _id: "789",
+    name: "Chess",
+    developerId: "234",
+    description: "Lorem"
+  }
 ];
 
 // create websites /api/webistes.
@@ -59,6 +94,7 @@ router.delete("/:wid", (req, res) => {
   for (let i = 0; i < websites.length; i++) {
     websites.splice(i, 1);
   }
+  res.json(websites);
 });
 
 module.exports = router;
