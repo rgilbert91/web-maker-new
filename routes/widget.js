@@ -1,95 +1,40 @@
 const express = require("express");
 const router = express.Router();
+const Widget = require("../models/Widget");
 
-const widgets = [
-  {
-    _id: "123",
-    widgetType: "HEADING",
-    pageId: "321",
-    size: "2",
-    text: "GIZMODO"
-  },
-  {
-    _id: "234",
-    widgetType: "HEADING",
-    pageId: "321",
-    size: "4",
-    text: "Lorem ipsum"
-  },
-  {
-    _id: "345",
-    widgetType: "IMAGE",
-    pageId: "321",
-    width: "100%",
-    url:
-      "https://www.gettyimages.ie/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg"
-  },
-  {
-    _id: "567",
-    widgetType: "HEADING",
-    pageId: "321",
-    size: "4",
-    text: "Lorem ipsum"
-  },
-  {
-    _id: "678",
-    widgetType: "YOUTUBE",
-    pageId: "321",
-    width: "100%",
-    url: "https://www.youtube.com/embed/X1JjPS40a-E"
-  }
-];
 // Create new widget
-router.post("/", (req, res) => {
-  const newWidget = req.body;
-  widgets.push(newWidget);
-  res.json(newWidget);
+router.post("/", async (req, res) => {
+  const newWidget = new Widget({ ...req.body });
+  const widget = await newWidget.save();
+  res.json(widget);
 });
 
 // Find all widgets for page
-router.get("/page/:pid", (req, res) => {
+router.get("/page/:pid", async (req, res) => {
   const pid = req.params.pid;
-  const currentWidgets = [];
-  for (let i = 0; i < widgets.length; i++) {
-    if (widgets[i].pageId === pid) {
-      currentWidgets.push(widgets[i]);
-    }
-  }
+  const currentWidgets = await Widget.find({ pageId: pid });
   res.json(currentWidgets);
 });
 
 // Find widget by ID
-router.get("/:wgid", (req, res) => {
+router.get("/:wgid", async (req, res) => {
   const wgid = req.params.wgid;
-  let widget = null;
-  for (let i = 0; i < widgets.length; i++) {
-    if (widgets[i]._id === wgid) {
-      widget = widgets[i];
-    }
-  }
+  const widget = await Widget.findById(wgid);
   res.json(widget);
 });
 
 // update widget
-router.put("/", (req, res) => {
-  const newWg = req.body;
-  for (let i = 0; i < widgets.length; i++) {
-    if (widgets[i]._id === newWg._id) {
-      widgets[i] = newWg;
-    }
-  }
-  res.json(newWg);
+router.put("/", async (req, res) => {
+  const newWidget = req.body;
+  await Widget.findByIdAndUpdate(newWidget._id, newWidget);
+  res.json(newWidget);
 });
 
 // Delete Widgets
-router.delete("/:wgid", (req, res) => {
+router.delete("/:wgid", async (req, res) => {
   const wgid = req.params.wgid;
-  for (let i = 0; i < widgets.length; i++) {
-    if (widgets[i]._id === wgid) {
-      widgets.splice(i, 1);
-    }
-  }
-  res.json(widgets);
+  await Widget.findByIdAndDelete(wgid);
+  res.json(null);
 });
 
 module.exports = router;

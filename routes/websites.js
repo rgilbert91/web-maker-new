@@ -34,7 +34,7 @@ router.put("/", async (req, res) => {
 router.delete("/:wid", async (req, res) => {
   const wid = req.params.wid;
   await Website.findByIdAndRemove(wid);
-  res.json(websites);
+  res.json("Website Deleted");
 });
 
 module.exports = router;
