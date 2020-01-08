@@ -29,6 +29,7 @@ app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
 });
 
+// CONNECT TO MONGO
 // Import db.is into server.js to connect to database
 const connectDB = require("./config/db");
 
